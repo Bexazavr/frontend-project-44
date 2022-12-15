@@ -15,7 +15,7 @@ const game = () => {
       console.log('Correct!');
       correctCount += 1;
     } else {
-      console.log(`'${answer}' is wrong answer :(. Correct answer was '${correctAnswer}'.`);
+      return console.log(`'${answer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
     }
     if (correctCount === 3) { console.log(`Congratulations, ${name}!`); }
   }

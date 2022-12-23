@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import { randomNum, question, isCorrect } from '../index.js';
 
 const brainCalc = (name) => {
-  const mathOperators = [' + ', ' - ', ' * '];
+  const mathOperators = ['+', '-', '*'];
   const firstInteger = randomNum();
   const secondInteger = randomNum();
   const randomOperator = mathOperators[Math.floor(Math.random() * mathOperators.length)];
@@ -11,15 +11,15 @@ const brainCalc = (name) => {
   let correctAnswer;
 
   switch (randomOperator) {
-    case ' * ':
+    case '*':
       mathTask = `${firstInteger} * ${secondInteger}`;
       correctAnswer = String(firstInteger * secondInteger);
       break;
-    case ' + ':
+    case '+':
       mathTask = `${firstInteger} + ${secondInteger}`;
       correctAnswer = String(firstInteger + secondInteger);
       break;
-    case ' - ':
+    case '-':
       mathTask = `${firstInteger} - ${secondInteger}`;
       correctAnswer = String(firstInteger - secondInteger);
       break;

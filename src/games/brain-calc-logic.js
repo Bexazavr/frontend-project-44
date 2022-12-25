@@ -2,31 +2,32 @@ import readlineSync from 'readline-sync';
 import { randomNum, question, isCorrect } from '../index.js';
 
 const brainCalc = (name) => {
+  console.log('What is the result of the expression?');
   const mathOperators = ['+', '-', '*'];
   const firstInteger = randomNum();
   const secondInteger = randomNum();
   const randomOperator = mathOperators[Math.floor(Math.random() * mathOperators.length)];
 
-  let mathTask;
+  let brainTask;
   let correctAnswer;
 
   switch (randomOperator) {
     case '*':
-      mathTask = `${firstInteger} * ${secondInteger}`;
+      brainTask = `${firstInteger} * ${secondInteger}`;
       correctAnswer = String(firstInteger * secondInteger);
       break;
     case '+':
-      mathTask = `${firstInteger} + ${secondInteger}`;
+      brainTask = `${firstInteger} + ${secondInteger}`;
       correctAnswer = String(firstInteger + secondInteger);
       break;
     case '-':
-      mathTask = `${firstInteger} - ${secondInteger}`;
+      brainTask = `${firstInteger} - ${secondInteger}`;
       correctAnswer = String(firstInteger - secondInteger);
       break;
     default:
       break;
   }
-  const answer = readlineSync.question(question(mathTask));
+  const answer = readlineSync.question(question(brainTask));
 
   return isCorrect(answer, correctAnswer, name);
 };

@@ -1,6 +1,18 @@
 import readlineSync from 'readline-sync';
 
-const randomNum = (max = 10) => Math.floor((Math.random() * max) + (Math.random() * max));
+const randomNum = (max = 15) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
+const getGcd = (numOne, numTwo) => {
+  const minNum = Math.min(numOne, numTwo);
+  const maxNum = Math.max(numOne, numTwo);
+  let gcd;
+  for (let i = minNum; i > 0; i -= 1) {
+    if (maxNum % i === 0 && minNum % i === 0) {
+      gcd = i;
+      break;
+    }
+  }
+  return gcd;
+};
 const question = (task) => `Question: ${task}\nYour answer: `;
 const wrongAnswer = (playerAnswer, correctAnswer, playerName) => `'${playerAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}!`;
 
@@ -34,5 +46,7 @@ const gameRounds = (game, rounds = 3) => {
   }
 };
 
-export { randomNum, question, isCorrect };
+export {
+  randomNum, getGcd, question, isCorrect,
+};
 export default gameRounds;

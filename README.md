@@ -4,5 +4,6 @@
 <a href="https://codeclimate.com/github/Bexazavr/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/b7ec0a94348418e134dc/maintainability" /></a>
 
 ### Asciinema's
-[«Brain-Even»](https://asciinema.org/a/XCEm7JpCHAGnKZwTNZve5YHSU)<br>
-[«Brain-Calc»](https://asciinema.org/a/nbGczlsN8Marr5Y9Pn7gAUM3L) 
+[«Brain-Even»](https://asciinema.org/a/vQBQCmF83ZiZHhfWpg9oMjehZ)<br>
+[«Brain-Calc»](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)<br>
+[«Brain-Gcd](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)

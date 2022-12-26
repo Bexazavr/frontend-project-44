@@ -6,4 +6,4 @@
 ### Asciinema's
 [«Brain-Even»](https://asciinema.org/a/vQBQCmF83ZiZHhfWpg9oMjehZ)<br>
 [«Brain-Calc»](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)<br>
-[«Brain-Gcd](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)
+[«Brain-Gcd»](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)

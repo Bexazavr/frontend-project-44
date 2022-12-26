@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const randomNum = (max = 15) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
+const randomNum = (max = 5) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
 const getGcd = (numOne, numTwo) => {
   const minNum = Math.min(numOne, numTwo);
   const maxNum = Math.max(numOne, numTwo);
@@ -24,15 +24,30 @@ const isCorrect = (playerAnswer, correctAnswer, playerName) => {
 };
 
 /*      welcome func, which discovers the player's name and return it     */
-const welcome = () => {
+const welcome = (game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
+  let task;
+  switch (game) {
+    case 'brain-even':
+      task = 'Answer "yes" if the number is even, otherwise answer "no".';
+      break;
+    case 'brain-calc':
+      task = 'What is the result of the expression?';
+      break;
+    case 'brain-gcd':
+      task = 'Find the greatest common divisor of given numbers.';
+      break;
+    default:
+      break;
+  }
+  console.log(task);
   return name;
 };
 
-const gameRounds = (game, rounds = 3) => {
-  const name = welcome();
+const gameRounds = (game, gameName, rounds = 3) => {
+  const name = welcome(gameName);
   let correctAnswersCount = 0;
   for (let i = 0; i < rounds; i += 1) {
     if (!game(name)) {

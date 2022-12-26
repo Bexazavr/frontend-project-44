@@ -4,7 +4,6 @@ import {
 } from '../index.js';
 
 const brainGcd = (name) => {
-  console.log('Find the greatest common divisor of given numbers.');
   const firstInteger = randomNum(25);
   const secondInteger = randomNum(25);
   const brainTask = `${firstInteger} ${secondInteger}`;

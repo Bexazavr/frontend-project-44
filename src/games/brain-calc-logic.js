@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 import { randomNum, question, isCorrect } from '../index.js';
 
 const brainCalc = (name) => {
-  console.log('What is the result of the expression?');
   const mathOperators = ['+', '-', '*'];
   const firstInteger = randomNum();
   const secondInteger = randomNum();

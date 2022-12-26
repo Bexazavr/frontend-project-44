@@ -1,6 +1,15 @@
 import readlineSync from 'readline-sync';
 
 const randomNum = (max = 5) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
+const generateProgression = (numQty = 10) => {
+  const startNum = Math.ceil((Math.random()) * 10);
+  const step = Math.ceil((Math.random()) * 10);
+  const result = [startNum];
+  for (let i = 1; i < numQty; i += 1) {
+    result.push(result[i - 1] + step);
+  }
+  return result;
+};
 const getGcd = (numOne, numTwo) => {
   const minNum = Math.min(numOne, numTwo);
   const maxNum = Math.max(numOne, numTwo);
@@ -39,6 +48,9 @@ const welcome = (game) => {
     case 'brain-gcd':
       task = 'Find the greatest common divisor of given numbers.';
       break;
+    case 'brain-progression':
+      task = 'What number is missing in the progression?';
+      break;
     default:
       break;
   }
@@ -62,6 +74,6 @@ const gameRounds = (game, gameName, rounds = 3) => {
 };
 
 export {
-  randomNum, getGcd, question, isCorrect,
+  randomNum, generateProgression, getGcd, question, isCorrect,
 };
 export default gameRounds;

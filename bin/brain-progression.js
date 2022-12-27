@@ -6,7 +6,7 @@ import brainProgression from '../src/games/brain-progression-logic.js';
 // brain-progression - mini-game,
 // the player must determine the missing number in the arithmetic progression.
 
-gameRounds(brainProgression, 'brain-progression', 10);
+gameRounds(brainProgression, 'brain-progression');
 
 // gameRounds() - main function,
 // that starts the games (1st parameter),

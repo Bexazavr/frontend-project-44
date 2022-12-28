@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 
+// function to generate a random number
 const randomNum = (max = 5) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
+
+// arithmetic progression generation function
 const generateProgression = (numQty = 10) => {
   const startNum = Math.ceil((Math.random()) * 10);
   const step = Math.ceil((Math.random()) * 10);
@@ -10,6 +13,8 @@ const generateProgression = (numQty = 10) => {
   }
   return result;
 };
+
+// the function of calculating the greatest common divisor
 const getGcd = (numOne, numTwo) => {
   const minNum = Math.min(numOne, numTwo);
   const maxNum = Math.max(numOne, numTwo);
@@ -22,9 +27,27 @@ const getGcd = (numOne, numTwo) => {
   }
   return gcd;
 };
+// function to determine if a number is prime
+
+const isPrime = (num) => {
+  if (num === 1 || num === 2) { return 'yes'; }
+  let i = 2;
+  while (i < num) {
+    if (num > i && num % i === 0) {
+      return 'no';
+    }
+    i += 1;
+  }
+  return 'yes';
+};
+
+// function for posing a question and substituting in "readlineSync"
 const question = (task) => `Question: ${task}\nYour answer: `;
+
+// function to respond in case of a player error
 const wrongAnswer = (playerAnswer, correctAnswer, playerName) => `'${playerAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}!`;
 
+// function to check the player's answer with the correct answer
 const isCorrect = (playerAnswer, correctAnswer, playerName) => {
   if (playerAnswer === correctAnswer) {
     return true;
@@ -32,7 +55,7 @@ const isCorrect = (playerAnswer, correctAnswer, playerName) => {
   return console.log(wrongAnswer(playerAnswer, correctAnswer, playerName));
 };
 
-/*      welcome func, which discovers the player's name and return it     */
+// welcome func, which discovers the player's name and return it
 const welcome = (game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -50,6 +73,9 @@ const welcome = (game) => {
       break;
     case 'brain-progression':
       task = 'What number is missing in the progression?';
+      break;
+    case 'brain-prime':
+      task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
       break;
     default:
       break;
@@ -74,6 +100,6 @@ const gameRounds = (game, gameName, rounds = 3) => {
 };
 
 export {
-  randomNum, generateProgression, getGcd, question, isCorrect,
+  randomNum, generateProgression, getGcd, isPrime, question, isCorrect,
 };
 export default gameRounds;

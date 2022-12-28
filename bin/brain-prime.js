@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 import gameRounds from '../src/index.js';
-import brainGcd from '../src/games/brain-gcd-logic.js';
+import brainPrime from '../src/games/brain-prime-logic.js';
 
-// brain-gcd - mini-game,
-// the player must calculate and enter the greatest common divisor of the two suggested numbers
+// brain-prime - mini-game,
+// the player must determine if the number is prime or not
 
-gameRounds(brainGcd, 'brain-gcd');
+gameRounds(brainPrime, 'brain-prime');
 
 // gameRounds() - main function,
 // that starts the games (1st parameter),
@@ -15,4 +15,4 @@ gameRounds(brainGcd, 'brain-gcd');
 //
 // default value of rounds = 3
 // you can add your value as third parameter
-// example: gameRounds(brainGcd, 'brain-gcd', 10)
+// example: gameRounds(brainPrime, 'brain-prime', 10)

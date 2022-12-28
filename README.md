@@ -8,4 +8,4 @@
 [Brain-Calc](https://asciinema.org/a/QdZvWIslVlIvnTJtwe1Ppzv3P)<br>
 [Brain-Gcd](https://asciinema.org/a/ioiEIfgs0l85hABbuExO36Ofi)<br>
 [Brain-Progression](https://asciinema.org/a/EALvD1XtD9dBjFG5xX4ri3BP8)<br>
-[Brain-Prime]()
+[Brain-Prime](https://asciinema.org/a/t2ElogpP0qhFA1pRpypPW79ca)

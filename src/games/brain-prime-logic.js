@@ -1,13 +1,26 @@
-import readlineSync from 'readline-sync';
-import {
-  randomNum, isPrime, question, isCorrect,
-} from '../index.js';
+import startGame, { getRandomNum } from '../index.js';
 
-const brainPrime = (name) => {
-  const num = randomNum(10);
-  const correctAnswer = isPrime(num);
-  const answer = readlineSync.question(question(num));
-  return isCorrect(answer, correctAnswer, name);
+const gameName = 'brain-prime';
+
+const isPrime = (num) => {
+  if (num === 1 || num === 2) { return 'yes'; }
+  let i = 2;
+  while (i < num) {
+    if (num > i && num % i === 0) {
+      return 'no';
+    }
+    i += 1;
+  }
+  return 'yes';
 };
+
+const game = () => {
+  const task = getRandomNum();
+  const answer = isPrime(task);
+
+  return [task, answer];
+};
+
+const brainPrime = () => startGame(gameName, game);
 
 export default brainPrime;

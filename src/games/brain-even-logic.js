@@ -1,11 +1,17 @@
-import readlineSync from 'readline-sync';
-import { randomNum, question, isCorrect } from '../index.js';
+import startGame, { getRandomNum } from '../index.js';
 
-const brainEven = (name) => {
-  const randomNumber = randomNum();
-  const answer = readlineSync.question(question(randomNumber));
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  return isCorrect(answer, correctAnswer, name);
+const gameName = 'brain-even';
+
+const isEven = (num) => num % 2 === 0;
+const getCorrectAnswer = (num) => (isEven(num) ? 'yes' : 'no');
+
+const game = () => {
+  const task = getRandomNum();
+  const answer = getCorrectAnswer(task);
+
+  return [task, answer];
 };
+
+const brainEven = () => startGame(gameName, game);
 
 export default brainEven;

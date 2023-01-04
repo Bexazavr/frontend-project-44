@@ -1,105 +1,49 @@
 import readlineSync from 'readline-sync';
 
-// function to generate a random number
-const randomNum = (max = 5) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
+const getRandomNum = (max = 5) => Math.ceil(((Math.random()) * max) + ((Math.random()) * max));
 
-// arithmetic progression generation function
-const generateProgression = (numQty = 10) => {
-  const startNum = Math.ceil((Math.random()) * 10);
-  const step = Math.ceil((Math.random()) * 10);
-  const result = [startNum];
-  for (let i = 1; i < numQty; i += 1) {
-    result.push(result[i - 1] + step);
-  }
-  return result;
-};
-
-// the function of calculating the greatest common divisor
-const getGcd = (numOne, numTwo) => {
-  const minNum = Math.min(numOne, numTwo);
-  const maxNum = Math.max(numOne, numTwo);
-  let gcd;
-  for (let i = minNum; i > 0; i -= 1) {
-    if (maxNum % i === 0 && minNum % i === 0) {
-      gcd = i;
-      break;
-    }
-  }
-  return gcd;
-};
-// function to determine if a number is prime
-
-const isPrime = (num) => {
-  if (num === 1 || num === 2) { return 'yes'; }
-  let i = 2;
-  while (i < num) {
-    if (num > i && num % i === 0) {
-      return 'no';
-    }
-    i += 1;
-  }
-  return 'yes';
-};
-
-// function for posing a question and substituting in "readlineSync"
-const question = (task) => `Question: ${task}\nYour answer: `;
-
-// function to respond in case of a player error
-const wrongAnswer = (playerAnswer, correctAnswer, playerName) => `'${playerAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}!`;
-
-// function to check the player's answer with the correct answer
-const isCorrect = (playerAnswer, correctAnswer, playerName) => {
-  if (playerAnswer === correctAnswer) {
-    return true;
-  }
-  return console.log(wrongAnswer(playerAnswer, correctAnswer, playerName));
-};
-
-// welcome func, which discovers the player's name and return it
-const welcome = (game) => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  let task;
-  switch (game) {
+const showDescription = (gameName) => {
+  switch (gameName) {
     case 'brain-even':
-      task = 'Answer "yes" if the number is even, otherwise answer "no".';
-      break;
+      return console.log('Answer "yes" if the number is even, otherwise answer "no".');
     case 'brain-calc':
-      task = 'What is the result of the expression?';
-      break;
+      return console.log('What is the result of the expression?');
     case 'brain-gcd':
-      task = 'Find the greatest common divisor of given numbers.';
-      break;
+      return console.log('Find the greatest common divisor of given numbers.');
     case 'brain-progression':
-      task = 'What number is missing in the progression?';
-      break;
+      return console.log('What number is missing in the progression?');
     case 'brain-prime':
-      task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-      break;
+      return console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
     default:
-      break;
+      return console.log('Error! Please check input data.');
   }
-  console.log(task);
-  return name;
+};
+const getUserName = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
-const gameRounds = (game, gameName, rounds = 3) => {
-  const name = welcome(gameName);
-  let correctAnswersCount = 0;
-  for (let i = 0; i < rounds; i += 1) {
-    if (!game(name)) {
-      return;
+const showQuestion = (task) => `Question: ${task}\nYour answer: `;
+const getUserAnswer = (task) => readlineSync.question(showQuestion(task));
+const isCorrect = (userAnswer, correctAnswer) => (userAnswer === String(correctAnswer));
+
+const startGame = (gameName, game, rounds = 3) => {
+  const userName = getUserName();
+  showDescription(gameName);
+
+  for (let i = 1; i <= rounds; i += 1) {
+    const [gameQuestion, correctAnswer] = game();
+    const userAnswer = getUserAnswer(gameQuestion);
+    if (!isCorrect(userAnswer, correctAnswer)) {
+      return console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
-    correctAnswersCount += 1;
     console.log('Correct!');
   }
-  if (correctAnswersCount === rounds) {
-    console.log(`Congratulations, ${name}!`);
-  }
+
+  return console.log(`Congratulations, ${userName}!`);
 };
 
-export {
-  randomNum, generateProgression, getGcd, isPrime, question, isCorrect,
-};
-export default gameRounds;
+export { getRandomNum };
+export default startGame;

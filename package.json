@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/Bexazavr/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Bexazavr/frontend-project-44/actions)",
+  "description": "My first project for a Hexlet course",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/Bexazavr/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Vitaly Kozlov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Bexazavr/frontend-project-44/issues"

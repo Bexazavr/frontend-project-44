@@ -45,27 +45,27 @@ sudo npm link
 
 #### Select one of the following games and run it by entering the highlighted text:
 
-**`brain-even`**  :point_left:
+**`brain-even`**  :point_left:<br> 
 The game provides a random number and a player needs to guess is this number even answering "yes" or "no".
 
 [![asciicast](https://asciinema.org/a/549531.svg)](https://asciinema.org/a/549531)
 ___
-**`brain-calc`** :point_left:
+**`brain-calc`** :point_left:<br>
 A player needs to calculate the result of the expression provided by the game.
 
 [![asciicast](https://asciinema.org/a/549534.svg)](https://asciinema.org/a/549534)
 ___
-**`brain-gcd`** :point_left:
+**`brain-gcd`** :point_left:<br>
  A player needs to find the **G**reatest **C**ommon **D**ivisor of two numbers provided by the game.
  
  [![asciicast](https://asciinema.org/a/549535.svg)](https://asciinema.org/a/549535)
  ___
-**`brain-progression`** :point_left:
+**`brain-progression`** :point_left:<br>
 A player needs to guess the missing element in the progression provided by the game.
 
 [![asciicast](https://asciinema.org/a/549536.svg)](https://asciinema.org/a/549536)
  ___
-**`brain-prime`** :point_left:
+**`brain-prime`** :point_left:<br>
  The game provides a random number and a player needs to guess is this number prime answering “yes” or “no”.
  
  [![asciicast](https://asciinema.org/a/549537.svg)](https://asciinema.org/a/549537)

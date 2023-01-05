@@ -1,6 +1,7 @@
-import startGame, { getRandomNum } from '../index.js';
+import getRandom from '../utils.js';
+import startGame from '../index.js';
 
-const gameName = 'brain-gcd';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (numOne, numTwo) => {
   const minNum = Math.min(numOne, numTwo);
@@ -15,14 +16,15 @@ const getGcd = (numOne, numTwo) => {
   return gcd;
 };
 
-const game = () => {
-  const firstNum = getRandomNum(25);
-  const secondNum = getRandomNum(25);
+const getGameData = () => {
+  const firstNum = getRandom(1, 50);
+  const secondNum = getRandom(1, 50);
   const task = `${firstNum} ${secondNum}`;
   const answer = `${getGcd(firstNum, secondNum)}`;
+
   return [task, answer];
 };
 
-const brainGcd = () => startGame(gameName, game);
+const brainGcd = () => startGame(gameDescription, getGameData);
 
 export default brainGcd;

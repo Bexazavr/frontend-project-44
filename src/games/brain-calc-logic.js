@@ -12,7 +12,7 @@ const calculateResult = (firstNum, operator, secondNum) => {
     case '-':
       return firstNum - secondNum;
     default:
-      return NaN;
+      return 'Error! Please check the input data.';
   }
 };
 
@@ -28,6 +28,6 @@ const getGameData = () => {
   return [task, answer];
 };
 
-const brainCalc = () => startGame(gameDescription, getGameData);
+const playBrainCalc = () => startGame(gameDescription, getGameData);
 
-export default brainCalc;
+export default playBrainCalc;

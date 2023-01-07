@@ -4,24 +4,24 @@ import startGame from '../index.js';
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num === 1 || num === 2) { return 'yes'; }
+  if (num === 1 || num === 2) { return true; }
   let i = 2;
   while (i < num) {
     if (num > i && num % i === 0) {
-      return 'no';
+      return false;
     }
     i += 1;
   }
-  return 'yes';
+  return true;
 };
 
 const getGameData = () => {
   const task = getRandom(1, 50);
-  const answer = isPrime(task);
+  const answer = isPrime(task) ? 'yes' : 'no';
 
   return [task, answer];
 };
 
-const brainPrime = () => startGame(gameDescription, getGameData);
+const playBrainPrime = () => startGame(gameDescription, getGameData);
 
-export default brainPrime;
+export default playBrainPrime;

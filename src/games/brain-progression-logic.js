@@ -24,6 +24,6 @@ const getGameData = () => {
   return [task, answer];
 };
 
-const brainProgression = () => startGame(gameDescription, getGameData);
+const playBrainProgression = () => startGame(gameDescription, getGameData);
 
-export default brainProgression;
+export default playBrainProgression;

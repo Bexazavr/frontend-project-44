@@ -3,9 +3,7 @@ import startGame from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const getProgression = (numQty = 10) => {
-  const startNum = getRandom(0, 15);
-  const step = getRandom(1, 10);
+const getProgression = (startNum, step, numQty = 10) => {
   const result = [startNum];
   for (let i = 1; i < numQty; i += 1) {
     result.push(result[i - 1] + step);
@@ -15,7 +13,9 @@ const getProgression = (numQty = 10) => {
 };
 
 const getGameData = () => {
-  const [progression, progressionLength] = getProgression();
+  const progressionStartNum = getRandom(0, 15);
+  const progressionStep = getRandom(1, 10);
+  const [progression, progressionLength] = getProgression(progressionStartNum, progressionStep);
   const hiddenIndex = getRandom(0, progressionLength - 1);
   const answer = `${progression[hiddenIndex]}`;
   progression[hiddenIndex] = '..';

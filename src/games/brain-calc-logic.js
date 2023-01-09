@@ -12,7 +12,7 @@ const calculateResult = (firstNum, operator, secondNum) => {
     case '-':
       return firstNum - secondNum;
     default:
-      return 'Error! Please check the input data.';
+      throw new Error('Parameter is not a operator!');
   }
 };
 

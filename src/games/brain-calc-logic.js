@@ -2,6 +2,7 @@ import getRandom from '../utils.js';
 import startGame from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
+const rounds = 3;
 
 const calculateResult = (firstNum, operator, secondNum) => {
   switch (operator) {
@@ -28,6 +29,6 @@ const getGameData = () => {
   return [task, answer];
 };
 
-const playBrainCalc = () => startGame(gameDescription, getGameData);
+const playBrainCalc = () => startGame(gameDescription, getGameData, rounds);
 
 export default playBrainCalc;

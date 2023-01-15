@@ -2,6 +2,7 @@ import getRandom from '../utils.js';
 import startGame from '../index.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
+const rounds = 3;
 
 const getGcd = (numOne, numTwo) => {
   const minNum = Math.min(numOne, numTwo);
@@ -25,6 +26,6 @@ const getGameData = () => {
   return [task, answer];
 };
 
-const playBrainGcd = () => startGame(gameDescription, getGameData);
+const playBrainGcd = () => startGame(gameDescription, getGameData, rounds);
 
 export default playBrainGcd;

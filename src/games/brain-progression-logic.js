@@ -2,6 +2,7 @@ import getRandom from '../utils.js';
 import startGame from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
+const rounds = 3;
 
 const getProgression = (startNum, step, numQty) => {
   const result = [startNum];
@@ -25,6 +26,6 @@ const getGameData = () => {
   return [task, answer];
 };
 
-const playBrainProgression = () => startGame(gameDescription, getGameData);
+const playBrainProgression = () => startGame(gameDescription, getGameData, rounds);
 
 export default playBrainProgression;
